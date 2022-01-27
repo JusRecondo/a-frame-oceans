@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- A-frame -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.7.1/aframe.min.js"></script> -->
+        <!--  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script> -->
+        <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/gh/alvinwan/aframe-low-poly@0.0.2/dist/aframe-low-poly.min.js"></script>
+
+        <!-- A-frame extras -->
+        <!--<script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script> -->
+        <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+
+        <!-- Animation component -->
+        <script src="https://rawgit.com/ngokevin/aframe-animation-component/master/dist/aframe-animation-component.min.js"></script>
+
+        <!-- Two way motion -->
+        <script src="https://fasility.com/components/twoway-motion/twoway-motion.js"></script>
+    </head>
+    <body>
+        <a-scene fog="type: linear; color: #daecf7; near:5; far:100">
+            <a-sky color="#d8e7f2"></a-sky>
+
+            <!-- Lights -->
+            <a-light
+                type="directional"
+                castShadow="true"
+                intensity="0.4"
+                color="#D0EAF9;"
+                position="5 3 1"
+            ></a-light>
+            <a-light intensity="0.8" type="ambient" color="#B4C5EC"></a-light>
+
+            <!-- Camera -->
+            <a-entity position="0 1 2.5">
+                <a-camera
+                    twoway-motion="speed: 35; nonMobileLoad: false; threshold: -10"
+                    wasd-controls
+                    look-controls
+                >
+                    <a-cursor scale="1.5 1.5 1.5" color="#aaaaaa" opacity="0.3"> 
+                    </a-cursor>
+                </a-camera>
+            </a-entity>
+
+            <!-- Icebergs -->
+            <!-- <lp-cone
+                class="iceberg"
+                opacity="0.8"
+                amplitude-variance="0.25"
+                segments-radial="5"
+                segments-height="3"
+                height="1"
+                radius-top="0.15"
+                radius-bottom="0.5"
+                position="3 -0.1 -1.5"
+                animation__float_y="property: rotation; from: -5 0 0; to: 5 0 0; dir: alternate; loop: true;"
+                animation__float_x="property: position; from: 3 -0.2 -1.5; to: 4 -0.2 -2.5; dir: alternate; loop: true; dur: 12000; easing: linear;"
+            >
+
+            </lp-cone>
+            <lp-cone
+                class="iceberg"
+                opacity="0.8"
+                amplitude="0.12"
+                segments-radial="7"
+                segments-height="3"
+                height="0.5"
+                radius-top="0.25"
+                radius-bottom="0.35"
+                position="-3 -0.1 -0.5"
+                animation__float_y="property: rotation; from: 0 1 -5; to: 5 0 0; dir: alternate; loop: true; dur: 1500"
+                animation__float_x="property: position; from:-4 -0.2 -0.5; to: -2 -0.2 -0.5; dir: alternate; loop: true; dur: 15000; easing: linear;"
+            >
+            </lp-cone>
+            <lp-cone
+                class="iceberg"
+                opacity="0.8"
+                amplitude="0.1"
+                segments-radial="6"
+                segments-height="2"
+                height="0.5"
+                radius-top="0.25"
+                radius-bottom="0.25"
+                position="-5 -0.2 -3.5"
+                animation__float_y="property: rotation; from: 5 1 -5; to: 5 0 0; dir: alternate; loop: true; dur: 800"
+                animation__float_x="property: position; from:-3 -0.2 -3.5; to: -5 -0.2 -5.5; dir: alternate; loop: true; dur: 15000; easing: linear;"
+            >
+            </lp-cone>  -->
+
+            <!-- Ocean -->
+            <a-ocean
+                depth="500"
+                width="500"
+                amplitude="0"
+                amplitude-variance="0.1"
+                speed="1.2"
+                speed-variance="1"
+                opacity="1"
+                density="500"
+                color="#000000"
+            ></a-ocean>
+            <a-ocean
+                depth="500"
+                width="500"
+                opacity="0.5"
+                amplitude="0"
+                amplitude-variance="0.15"
+                speed="1.5"
+                speed-variance="1"
+                density="100"
+                color="#28353b"
+            ></a-ocean>
+        </a-scene>
+    </body>
+</html>

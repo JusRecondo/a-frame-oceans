@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+        <!-- load aframe   -->
+        <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+        <!--  load aframe-extras to get access to the <ocean> component  -->
+        <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
+
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <section class="overlay">
+            <h1>HOlissss</h1>
+            <p>
+                Podemos usar algo asi como fondo en alguna pagina, con otros
+                colores.
+            </p>
+            <p>
+                Desactivé la posibilidad de que les usuaries se muevan en esta
+                escena, asi solo ven el oceano como fondo pero no pueden moverse
+                ni perderse por ahi. Encima podemos poner elementos html como estos :p
+            </p>
+            <p>Mira hice un par de ejemplos para J2:</p>
+            <ul>
+                <li>
+                    <a href="oceano-de-fondo1.html" target="_blank"
+                        >Océano de fondo 1</a
+                    >
+                </li>
+                <li>
+                    <a href="oceano-de-fondo2.html" target="_blank"
+                        >Océano de fondo 2</a
+                    >
+                </li>
+                <li>
+                    <a href="oceano-de-fondo3.html" target="_blank"
+                        >Océano de fondo 3</a
+                    >
+                </li>
+            </ul>
+            <p>
+                <a href="oceano-mundo3d.html" target="_blank"
+                    >Este seria el mundo 3d</a
+                >
+            </p>
+          </section>
+
+        <section><h2>section</h2></section>
+        <section class="background"><h2>section</h2></section>
+        <section><h2>section</h2></section>
+        <section class="background2"><h2>section</h2></section>
+        <!-- create animated ocean scene using aframe.io   -->
+        <section class="embeddedScene">
+          <a-scene vr-mode-ui="enabled: false" embedded>
+              <a-sky color="#ffffff"></a-sky>
+              <a-entity>
+                  <a-camera
+                      look-controls="enabled: false;"
+                      wasd-controls="enabled: false;"
+                  >
+                  </a-camera>
+              </a-entity>
+              <a-ocean
+                  color="#ffffff"
+                  rotation="0 0 0"
+                  width="50"
+                  depth="50"
+                  density="80"
+                  position="0 0 -10"
+              ></a-ocean>
+              <!-- lighting determines color of ocean animation -->
+              <a-light
+                  type="point"
+                  color="#ffef00"
+                  intensity="0.7"
+                  position="0 0 0"
+              ></a-light>
+              <a-light
+                  type="point"
+                  color="#0815fa"
+                  intensity="0.7"
+                  position="10 0 0"
+              ></a-light>
+              <a-light
+                  type="point"
+                  color="#ff0000"
+                  intensity="0.7"
+                  position="-10 0 0"
+              ></a-light>
+          </a-scene>
+        </section>
+    </body>
+</html>

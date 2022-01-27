@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+        <!-- load aframe   -->
+        <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+        <!--  load aframe-extras to get access to the <ocean> component  -->
+        <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
+
+        <link rel="stylesheet" href="styles.css"/>
+    </head>
+
+    <body>
+        <div class="title">
+            <p>Oceano de fondo 2</p>
+        </div>
+
+
+        <section class="embeddedScene">
+            <a-scene vr-mode-ui="enabled: false">
+                <a-sky color="#000000"></a-sky>
+                <a-entity>
+                    <a-camera  look-controls="enabled: false;" wasd-controls="enabled: false;">
+                    </a-camera>
+                </a-entity>
+<!--                 <a-light
+                  type="point"
+                  color="#ffffff"
+                  intensity="0.7"
+                  position="0 0 0"
+              ></a-light>
+              <a-light
+                  type="point"
+                  color="#ffffff"
+                  intensity="0.7"
+                  position="10 0 0"
+              ></a-light>
+              <a-light
+                  type="point"
+                  color="#ffffff"
+                  intensity="0.7"
+                  position="-10 0 0"
+              ></a-light> -->
+                <a-ocean
+                    rotation="0 0 0"
+                    position="0 0 -4"
+                    depth="50"
+                    width="50"
+                    amplitude="2"
+                    amplitude-variance="0.1"
+                    speed="1"
+                    speed-variance="1"
+                    opacity="0.7"
+                    density="30"
+                    color="#000000"
+                ></a-ocean>
+                <a-ocean
+                    rotation="0 0 0"
+                    position="0 0 -4"
+                    depth="50"
+                    width="50"
+                    opacity="0.5"
+                    amplitude="2"
+                    amplitude-variance="0.15"
+                    speed="1.2"
+                    speed-variance="1"
+                    density="50"
+                    color="#0f1112"
+                ></a-ocean>
+
+         <!--            <a-ocean
+                    rotation="0 0 0"
+                    position="0 0 -4"
+                    depth="50"
+                    width="50"
+                    opacity="0.5"
+                    amplitude="0"
+                    amplitude-variance="0.15"
+                    speed="1.2"
+                    speed-variance="1"
+                    density="30"
+                    color="#070708"
+                ></a-ocean> -->
+            </a-scene>
+        </section>
+    </body>
+</html>
