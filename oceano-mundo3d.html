@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <!-- A-frame -->
         <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.7.1/aframe.min.js"></script> -->
         <!--  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script> -->
@@ -36,19 +36,230 @@
             <a-light intensity="0.8" type="ambient" color="#B4C5EC"></a-light>
 
             <!-- Camera -->
-            <a-entity position="0 1 2.5">
+            <a-entity position="0 1 80">
                 <a-camera
-                    twoway-motion="speed: 35; nonMobileLoad: false; threshold: -10"
+                    twoway-motion="speed: 20; nonMobileLoad: false; threshold: -10"
                     wasd-controls
                     look-controls
                 >
-                    <a-cursor scale="1.5 1.5 1.5" color="#aaaaaa" opacity="0.3"> 
+                    <a-cursor scale="1.5 1.5 1.5" color="#aaaaaa" opacity="0.3">
                     </a-cursor>
                 </a-camera>
             </a-entity>
 
+            <!-- Ocean -->
+            <a-ocean
+                depth="200"
+                width="200"
+                amplitude="0"
+                amplitude-variance="0.1"
+                speed="1.2"
+                speed-variance="1"
+                opacity="1"
+                density="100"
+                color="#000000"
+            ></a-ocean>
+            <a-ocean
+                depth="200"
+                width="200"
+                opacity="0.5"
+                amplitude="0"
+                amplitude-variance="0.15"
+                speed="1.5"
+                speed-variance="1"
+                density="100"
+                color="#28353b"
+            ></a-ocean>
+
+            <!-- Estructuras -->
+
+            <!-- Cilindro 1 -->
+            <a-cylinder
+                color="#bbb"
+                height="10"
+                radius="20"
+                segments-radial="20"
+                side="back"
+                position="0 4 50"
+                opacity="0.8"
+            >
+                <a-circle 
+                    color="#CCC" 
+                    radius="8" 
+                    rotation="90 0 0"
+                    position="0 -3.4 0"
+                    side="double"
+                    opacity="0.8">
+                </a-circle>
+                <!-- Esfera izquierda -->
+                <a-sphere 
+                    position="-10 0 0" 
+                    radius="1" 
+                    color="#000000"
+                    shader="standard"
+                    roughness="0"
+                    opacity="1"
+                    
+                    animation__pulse="property: scale; from: 1 1 1; to: 1.2 1.2 1.2; dir: alternate; loop: true; dur: 2000">
+                </a-sphere>
+                <!-- Esfera central -->
+                <a-sphere 
+                    position="0 0 0" 
+                    radius="1" 
+                    color="#000000"
+                    shader="standard"
+                    roughness="0"
+                    opacity="1"
+                    animation__float="property: position; from: 0 -0.5 0; to: 0 1.5 0; dir: alternate; loop: true; dur: 4000; easing: easeInOutQuad; "
+                    animation__pulse="property: scale; from: 1 1 1; to: 1.2 1.2 1.2; dir: alternate; loop: true; dur: 2000">
+                </a-sphere>
+                <!-- Espefa derecha -->
+                <a-sphere 
+                    position="10 0 0" 
+                    radius="1" 
+                    color="#000000"
+                    shader="standard"
+                    roughness="0"
+                    opacity="1"
+                    animation__pulse="property: scale; from: 1 1 1; to: 1.2 1.2 1.2; dir: alternate; loop: true; dur: 2000">
+                </a-sphere>
+
+                <a-text
+                    position="0 0 -15"
+                    value="Continua avanzando..."
+                    color="#000000"
+                    alpha-test="5"
+                ></a-text>
+            </a-cylinder>           
+
+             <!-- Cilindro 2 -->
+             <a-cylinder
+             color="#000"
+             height="10"
+             radius="30"
+             segments-radial="30"
+             side="back"
+             position="-60 4 0"
+             opacity="0.8"
+         >
+             <a-circle 
+                 color="#CCC" 
+                 radius="20" 
+                 rotation="90 0 0"
+                 position="0 -3.4 0"
+                 side="double"
+                 opacity="0.8">
+             </a-circle>
+
+             <!-- Esfera izquierda -->
+             <a-sphere 
+                 position="-10 0 0" 
+                 radius="1" 
+                 color="#000000"
+                 shader="standard"
+                 roughness="0"
+                 opacity="1"
+                 animation__pulse="property: scale; from: 1 1 1; to: 1.2 1.2 1.2; dir: alternate; loop: true; dur: 2000">
+             </a-sphere>
+             <!-- Esfera central -->
+             <a-sphere 
+                 position="0 0 0" 
+                 radius="1" 
+                 color="#000000"
+                 shader="standard"
+                 roughness="0"
+                 opacity="1"
+                 animation__float="property: position; from: 0 -0.5 0; to: 0 1.5 0; dir: alternate; loop: true; dur: 4000; easing: easeInOutQuad; "
+                 animation__pulse="property: scale; from: 1 1 1; to: 1.2 1.2 1.2; dir: alternate; loop: true; dur: 2000">
+             </a-sphere>
+             <!-- Esfera derecha -->
+             <a-sphere 
+                 position="10 0 0" 
+                 radius="1" 
+                 color="#000000"
+                 shader="standard"
+                 roughness="0"
+                 opacity="1"
+                 animation__pulse="property: scale; from: 1 1 1; to: 1.2 1.2 1.2; dir: alternate; loop: true; dur: 2000">
+             </a-sphere>
+
+            </a-cylinder> 
+
+            <!-- Cilindro 3 -->
+            <a-cylinder
+            color="#000"
+            height="15"
+            radius="40"
+            segments-radial="40"
+            side="back"
+            position="60 4 -20"
+            opacity="1"
+        >
+            <a-circle 
+                color="#CCC" 
+                radius="20" 
+                rotation="90 0 0"
+                position="0 -3.4 0"
+                side="double"
+                opacity="0.8">
+            </a-circle>
+            
+            <!-- Esfera izquierda  -->
+            <a-sphere 
+                position="-10 0 0" 
+                radius="1" 
+                color="#000000"
+                shader="standard"
+                roughness="0"
+                opacity="1"
+                animation__pulse="property: scale; from: 1 1 1; to: 1.2 1.2 1.2; dir: alternate; loop: true; dur: 2000">
+            </a-sphere>
+            <!-- Esfera central -->
+            <a-sphere 
+                position="0 0 0" 
+                radius="1" 
+                color="#000000"
+                shader="standard"
+                roughness="0"
+                opacity="1"
+                animation__float="property: position; from: 0 -0.5 0; to: 0 1.5 0; dir: alternate; loop: true; dur: 4000; easing: easeInOutQuad; "
+                animation__pulse="property: scale; from: 1 1 1; to: 1.2 1.2 1.2; dir: alternate; loop: true; dur: 2000">
+            </a-sphere>
+            <!-- Esfera derecha -->
+            <a-sphere 
+                position="10 0 0" 
+                radius="1" 
+                color="#000000"
+                shader="standard"
+                roughness="0"
+                opacity="1"
+                animation__pulse="property: scale; from: 1 1 1; to: 1.2 1.2 1.2; dir: alternate; loop: true; dur: 2000">
+            </a-sphere>
+
+           </a-cylinder> 
+
+            <!-- Elementos flotantes aire -->
+            <a-assets>
+                <!-- prueba -->
+                <a-asset-item
+                    id="tree"
+                    src="assets/PEACE_LILLY_5K.gltf"
+                ></a-asset-item>
+            </a-assets>
+
+            <!-- Texto -->
+            <a-entity
+                geometry="primitive: plane; width: 8; height: 4"
+                material="color: #000; opacity: 0.6; side: double;"
+                text="value: Bienvenide! 
+                Podes moverte en este mundo usando las teclas WASD y el mouse, o tocando la pantalla si estas en un dispositivo movil.; wrap-count: 30; z-offset:0.5; side: double; width: 6;"
+                position="0 3 72"
+                rotation="0 0 0"
+            ></a-entity>
+
+            <!-- Elementos flotantes agua -->
             <!-- Icebergs -->
-            <!-- <lp-cone
+            <lp-cone
                 class="iceberg"
                 opacity="0.8"
                 amplitude-variance="0.25"
@@ -57,9 +268,9 @@
                 height="1"
                 radius-top="0.15"
                 radius-bottom="0.5"
-                position="3 -0.1 -1.5"
+                position="1 0.2 -1.5"
                 animation__float_y="property: rotation; from: -5 0 0; to: 5 0 0; dir: alternate; loop: true;"
-                animation__float_x="property: position; from: 3 -0.2 -1.5; to: 4 -0.2 -2.5; dir: alternate; loop: true; dur: 12000; easing: linear;"
+                animation__float_x="property: position; from: 1 0.2 -1.5; to: 4 0.5 -2.5; dir: alternate; loop: true; dur: 15000; easing: linear;"
             >
 
             </lp-cone>
@@ -72,9 +283,9 @@
                 height="0.5"
                 radius-top="0.25"
                 radius-bottom="0.35"
-                position="-3 -0.1 -0.5"
+                position="-20 0.2 10"
                 animation__float_y="property: rotation; from: 0 1 -5; to: 5 0 0; dir: alternate; loop: true; dur: 1500"
-                animation__float_x="property: position; from:-4 -0.2 -0.5; to: -2 -0.2 -0.5; dir: alternate; loop: true; dur: 15000; easing: linear;"
+                animation__float_x="property: position; from:-70 0.4 35; to: -66 0.2 35; dir: alternate; loop: true; dur: 15000; easing: linear;"
             >
             </lp-cone>
             <lp-cone
@@ -86,35 +297,54 @@
                 height="0.5"
                 radius-top="0.25"
                 radius-bottom="0.25"
-                position="-5 -0.2 -3.5"
+                position="-5 0 -3.5"
                 animation__float_y="property: rotation; from: 5 1 -5; to: 5 0 0; dir: alternate; loop: true; dur: 800"
-                animation__float_x="property: position; from:-3 -0.2 -3.5; to: -5 -0.2 -5.5; dir: alternate; loop: true; dur: 15000; easing: linear;"
+                animation__float_x="property: position; from:-5 0.2 -40; to: -8 0 -35; dir: alternate; loop: true; dur: 15000; easing: linear;"
             >
-            </lp-cone>  -->
+            </lp-cone> 
 
-            <!-- Ocean -->
-            <a-ocean
-                depth="500"
-                width="500"
-                amplitude="0"
-                amplitude-variance="0.1"
-                speed="1.2"
-                speed-variance="1"
-                opacity="1"
-                density="500"
-                color="#000000"
-            ></a-ocean>
-            <a-ocean
-                depth="500"
-                width="500"
-                opacity="0.5"
-                amplitude="0"
-                amplitude-variance="0.15"
-                speed="1.5"
-                speed-variance="1"
-                density="100"
-                color="#28353b"
-            ></a-ocean>
+            <!-- Torus 1 -->
+            <a-torus-knot 
+                color="#000" 
+                opacity="0.7"
+                arc="180" 
+                p="2" 
+                q="7" radius="5" 
+                radius-tubular="0.2" 
+                position="-10d 0 8"
+                animation__float_y="property: rotation; from: 90 2 0; to: 90 0 0; dir: alternate; loop: true; dur: 6000">
+            </a-torus-knot>
+
+            <!-- Torus 2 -->
+            <a-torus-knot 
+                color="#bbb" 
+                opacity="0.7"
+                arc="200" 
+                p="3" 
+                q="7" radius="5" 
+                radius-tubular="0.2" 
+                position="70 0 20"
+                scale="3 3 3"
+                animation__float_y="property: rotation; from: 90 3 0; to: 90 0 0; dir: alternate; loop: true; dur: 5000">
+            </a-torus-knot>
+           
+            <!-- Torus 3 -->
+            <a-torus-knot 
+                color="#000" 
+                opacity="0.7"
+                arc="200" 
+                p="3" 
+                q="7" radius="5" 
+                radius-tubular="0.2" 
+                position="-70 0 -60"
+                scale="4 4 4"
+                animation__float_y="property: rotation; from: 90 3 0; to: 90 0 0; dir: alternate; loop: true; dur: 5000">
+            </a-torus-knot>
+
+
+            <!-- pruebas -->
+            <!-- <a-gltf-model src="#tree" position="0 1.5 -5"></a-gltf-model>           
+ -->
         </a-scene>
     </body>
 </html>
